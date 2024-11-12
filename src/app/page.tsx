@@ -5,6 +5,7 @@ import { LampDemo } from "@/components/lamp";
 import { SparklesCore } from "@/components/Sparkles";
 import { SparklesPreview } from "@/components/SparklesPreview";
 import { LampComponents } from "@/components/Templates/LampComponents";
+import { MovingCardsComponents } from "@/components/Templates/MovingCardsComponents";
 import { SparklesFont } from "@/components/Templates/SparklesFont";
 import { TextRevealCardComponents } from "@/components/Templates/TextReveralCardComponents";
 import { WobbleCardComponents } from "@/components/Templates/WobbleCardComponents";
@@ -38,13 +39,13 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="max-w-7xl w-full h-screen mx-auto flex bg-white">
-        <LampComponents />
+      <div className="max-w-full w-full max-h-full ">
+        <TimelineDemo />
       </div>
 
-      {/* <div className="max-w-full w-full max-h-full ">
-        <TimelineDemo />
-      </div> */}
+      <div className="max-w-7xl w-full mx-auto flex flex-col justify-center items-center">
+        <LampComponents />
+      </div>
     </>
   );
 }
