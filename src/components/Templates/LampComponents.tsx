@@ -23,7 +23,6 @@ export function LampComponents() {
         <div className="flex flex-col max-w-full w-full">
           <p>Skill and TechStack</p>
           <CardHoverComponents />
-          
         </div>
       </motion.h1>
     </LampContainer>

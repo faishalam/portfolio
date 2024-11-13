@@ -56,16 +56,34 @@ const content = [
       </div>
     ),
     content: (
-      <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] flex items-center justify-center text-white">
-        Collaborative Editing
+      <div className="h-full max-w-full w-full bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] flex items-center justify-center text-white">
+        <div className="h-[40rem] max-w-full w-full flex items-center justify-center ">
+          <PinContainer
+            title="/ui.aceternity.com"
+            href="https://twitter.com/mannupaaji"
+          >
+            <div className="flex basis-full flex-col p-4 tracking-tight text-slate-100/50 sm:basis-1/2 max-w-full w-full">
+              <div className="flex flex-1 rounded-lg w-full">
+                <Compare
+                  firstImage="/images/nmw-auth.png"
+                  secondImage="/images/nmw-dashboard.png"
+                  // firstImageClassName="object-cover object-left-top"
+                  // secondImageClassname="object-cover object-left-top"
+                  className="h-[250px]"
+                  slideMode="hover"
+                  autoplay={true}
+                />
+              </div>
+            </div>
+          </PinContainer>
+        </div>
       </div>
     ),
   },
-
   {
     title: "PT Kalimantan Prima Persada (KPP Mining)",
     position: "Software Engineer - Full Stack Engineer - Project Based",
-    years: "April 2024 - November 2024",
+    years: "April 2024 - Present",
     description:
       "As a Full Stack Developer to build a web-based application utilized across all departments and sites of PT. Kalimantan Prima Persada (KPP Mining). This application is designed to facilitate asset monitoring, approvals, and overdue reminders, streamlining asset management processes and improving data accuracy.",
     points: (
@@ -110,25 +128,24 @@ const content = [
       </div>
     ),
     content: (
-      <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] flex items-center justify-center text-white">
-        <div className="h-[40rem] w-full flex items-center justify-center ">
+      <div className="h-full max-w-full w-full bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] flex items-center justify-center text-white">
+        <div className="h-[40rem] max-w-full w-full flex items-center justify-center ">
           <PinContainer
             title="/ui.aceternity.com"
             href="https://twitter.com/mannupaaji"
           >
-            <div className="flex basis-full flex-col p-4 tracking-tight text-slate-100/50 sm:basis-1/2 ">
+            <div className="flex basis-full flex-col p-4 tracking-tight text-slate-100/50 sm:basis-1/2 max-w-full w-full">
               <div className="flex flex-1 rounded-lg w-full">
                 <Compare
-                  firstImage="https://assets.aceternity.com/code-problem.png"
-                  secondImage="https://assets.aceternity.com/code-solution.png"
-                  firstImageClassName="object-cover object-left-top"
-                  secondImageClassname="object-cover object-left-top"
-                  className="h-[250px] w-[200px] md:h-[300px] md:w-[370px]"
+                  firstImage="/images/kpp-auth.png"
+                  secondImage="/images/kpp-dashboard.png"
+                  // firstImageClassName="object-cover object-left-top"
+                  // secondImageClassname="object-cover object-left-top"
+                  className="h-[250px]"
                   slideMode="hover"
                   autoplay={true}
                 />
               </div>
-              {/* <div className="flex flex-1 w-full rounded-lg mt-4 bg-gradient-to-br from-violet-500 via-purple-500 to-blue-500" /> */}
             </div>
           </PinContainer>
         </div>
@@ -138,8 +155,13 @@ const content = [
 ];
 export function StickyScrollComponents() {
   return (
-    <div className="w-full max-w-full h-full flex justify-center items-center">
-      <StickyScroll content={content} />
-    </div>
+    <>
+      <div className="text-4xl md:text-4xl lg:text-5xl flex flex-col w-full justify-center items-center font-bold text-left bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50 pb-10">
+        <p>Work Experience</p>
+      </div>
+      <div className="w-full max-w-full flex justify-center items-center">
+        <StickyScroll content={content} />
+      </div>
+    </>
   );
 }

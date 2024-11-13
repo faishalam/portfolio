@@ -43,11 +43,11 @@ export default function CardPinComponents() {
   return (
     <div className="py-20">
       <div className="max-w-7xl mx-auto py-10 px-4">
-        <div className="text-4xl md:text-4xl lg:text-5xl flex flex-col w-full justify-center items-center font-bold text-left bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">
+        <div className="text-4xl md:text-4xl lg:text-5xl flex flex-col w-full justify-center items-center font-bold text-left bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50 pb-10">
           <p>Recent Project</p>
         </div>
       </div>
-      <div className="grid grid-cols-3 gap-20">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
         {projects.map((item) => (
           <div
             className="lg:min-h-[32.5rem] h-[25rem] flex items-center justify-center sm:w-96 w-[80vw]"

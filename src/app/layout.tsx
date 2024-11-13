@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import { GlobeDemo } from "@/components/Templates/GlobeComponents";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -27,7 +28,7 @@ export default function RootLayout({
     <html lang="en">
       <body
         // className=" bg-black"
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-black max-w-full w-full min-h-screen h-full mx-auto`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-black max-w-full w-full min-h-screen mx-auto`}
       >
         {children}
       </body>

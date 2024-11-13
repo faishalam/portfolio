@@ -9,12 +9,12 @@ export const StickyScroll = ({
   contentClassName,
 }: {
   content: {
-    title: string;
-    description: string;
-    content?: React.ReactNode | any;
+    title?: string;
+    description?: string;
+    content?: React.ReactNode;
     years?: string;
     position?: string;
-    points?: string;
+    points?: React.ReactNode; // Change this to React.ReactNode
   }[];
   contentClassName?: string;
 }) => {
@@ -67,13 +67,13 @@ export const StickyScroll = ({
       animate={{
         backgroundColor: backgroundColors[activeCard % backgroundColors.length],
       }}
-      className="h-[50rem] max-w-full w-full overflow-y-auto flex justify-center relative space-x-10 rounded-md p-10"
+      className="h-[50rem] max-w-full w-full overflow-y-auto flex flex-col md:flex-row justify-center relative space-x-10 rounded-md p-10"
       ref={ref}
     >
       <div className="div relative flex items-start px-4 max-w-full w-full">
-        <div className="max-w-full w-full">
+        <div className="max-w-full w-full h-screen">
           {content.map((item, index) => (
-            <div key={item.title + index} className="my-20 w-full">
+            <div key={index} className="my-20 w-full">
               <motion.h2
                 initial={{
                   opacity: 0,
