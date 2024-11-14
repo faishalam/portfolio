@@ -15,7 +15,7 @@ const content = [
     description:
       "As a Frontend Engineer at NMW, I led the successful migration of a core medical application, Medlib, from PHP to React JS, achieving significant performance improvements and a modernized user interface. Medlib is a comprehensive medical records application designed for both patients and doctors, featuring essential tools such as appointment scheduling, prescription tracking, and medication recommendations.",
     points: (
-      <div className="max-w-full w-full flex flex-col gap-3">
+      <div className="max-w-full w-full flex flex-col gap-3 mt-10">
         {[
           {
             label: "Technology",
@@ -87,7 +87,7 @@ const content = [
     description:
       "As a Full Stack Developer to build a web-based application utilized across all departments and sites of PT. Kalimantan Prima Persada (KPP Mining). This application is designed to facilitate asset monitoring, approvals, and overdue reminders, streamlining asset management processes and improving data accuracy.",
     points: (
-      <div className="max-w-full w-full flex flex-col gap-3">
+      <div className="max-w-full w-full flex flex-col gap-3 mt-10">
         {[
           {
             label: "Technology",

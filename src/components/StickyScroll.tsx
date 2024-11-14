@@ -14,15 +14,13 @@ export const StickyScroll = ({
     content?: React.ReactNode;
     years?: string;
     position?: string;
-    points?: React.ReactNode; // Change this to React.ReactNode
+    points?: React.ReactNode
   }[];
   contentClassName?: string;
 }) => {
   const [activeCard, setActiveCard] = React.useState(0);
   const ref = useRef<any>(null);
   const { scrollYProgress } = useScroll({
-    // uncomment line 22 and comment line 23 if you DONT want the overflow container and want to have it change on the entire page scroll
-    // target: ref
     container: ref,
     offset: ["start start", "end start"],
   });
@@ -70,7 +68,7 @@ export const StickyScroll = ({
       className="h-[50rem] max-w-full w-full overflow-y-auto flex flex-col md:flex-row justify-center relative space-x-10 rounded-md p-10"
       ref={ref}
     >
-      <div className="div relative flex items-start px-4 max-w-full w-full">
+      <div className="relative flex items-start px-4 max-w-full w-full">
         <div className="max-w-full w-full h-screen">
           {content.map((item, index) => (
             <div key={index} className="my-20 w-full">
@@ -87,7 +85,7 @@ export const StickyScroll = ({
                 <p className="text-slate-300 text-sm mt-2">{item.position}</p>
                 <p className="text-slate-300 text-sm">{item.years}</p>
               </motion.h2>
-              <motion.p
+              <motion.div
                 initial={{
                   opacity: 0,
                 }}
@@ -97,8 +95,8 @@ export const StickyScroll = ({
                 className="text-sm text-slate-300 max-w-2xl mt-5"
               >
                 {item.description}
-                <p className="mt-5">{item.points}</p>
-              </motion.p>
+                {item.points}
+              </motion.div>
             </div>
           ))}
           <div className="h-40" />

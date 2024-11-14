@@ -3,38 +3,74 @@
 import { FaLocationArrow } from "react-icons/fa6";
 import { PinContainer } from "../CardPin";
 import { CompareComponents } from "./CompareComponents";
+import { Compare } from "../Compare";
 
 export const projects = [
   {
     id: 1,
-    title: "KPP Mining Monitoring",
-    des: "Explore the wonders of our solar system with this captivating 3D simulation of the planets using Three.js.",
-    img: "../../../public/images/kpp-mining.png",
-    iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/fm.svg"],
+    title: "PT Kalimantan Prima Persada (KPP Mining)",
+    des: "Build Web App to monitor and manage assets, approvals, and overdue reminders, streamlining asset management processes and improving data accuracy.",
+    years: "April 2024 - Present",
+    position: "Full Stack Engineer",
+    firstImage: "/images/kpp-auth.png",
+    secondImage: "/images/kpp-dashboard.png",
+    iconLists: [
+      "/next.svg",
+      "/tail.svg",
+      "/ts.svg",
+      "/vercel.svg",
+      "/javascript.svg",
+      "/aws-white.svg",
+    ],
     link: "/ui.earth.com",
   },
   {
     id: 2,
-    title: "Yoom - Video Conferencing App",
-    des: "Simplify your video conferencing experience with Yoom. Seamlessly connect with colleagues and friends.",
-    img: "/p2.svg",
-    iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/stream.svg", "/c.svg"],
+    title: "Chatting App - Individual Project",
+    des: "A full stack real time chatting app using Ruby on Rails and Next JS",
+    years: "November 2024",
+    position: "Full Stack Engineer",
+    firstImage: "/images/chat-auth.png",
+    secondImage: "/images/chat-dashboard.png",
+    iconLists: [
+      "/next.svg",
+      "/tail.svg",
+      "/ts.svg",
+      "/vercel.svg",
+      "/ruby.svg",
+      "/aws-white.svg",
+      "/rails.svg",
+    ],
     link: "/ui.yoom.com",
   },
   {
     id: 3,
-    title: "AI Image SaaS - Canva Application",
-    des: "A REAL Software-as-a-Service app with AI features and a payments and credits system using the latest tech stack.",
-    img: "/p3.svg",
-    iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/c.svg"],
+    title: "Weather App - Individual Project",
+    des: "A full stack weather app and forecasting app using Next JS",
+    years: "October 2024",
+    position: "Full Stack Engineer",
+    firstImage: "/images/weather-dark.png",
+    secondImage: "/images/weather-white.png",
+    iconLists: [
+      "/next.svg",
+      "/tail.svg",
+      "/ts.svg",
+      "/vercel.svg",
+      "/javascript.svg",
+      "/aws-white.svg",
+    ],
     link: "/ui.aiimg.com",
   },
   {
     id: 4,
-    title: "Animated Apple Iphone 3D Website",
-    des: "Recreated the Apple iPhone 15 Pro website, combining GSAP animations and Three.js 3D effects..",
+    title: "Fashion E-commerce - Individual Project",
+    des: "A full stack fashion e-commerce app end to end user payments using midtrans",
+    years: "March 2024 - April 2024",
+    position: "Full Stack Engineer",
+    firstImage: "/images/fashion-dashboard.png",
+    secondImage: "/images/fashion-list.png",
     img: "/p4.svg",
-    iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/three.svg", "/gsap.svg"],
+    iconLists: ["/react.svg", "/tail.svg", "/javascript.svg"],
     link: "/ui.apple.com",
   },
 ];
@@ -50,7 +86,7 @@ export default function CardPinComponents() {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
         {projects.map((item) => (
           <div
-            className="lg:min-h-[32.5rem] h-[25rem] flex items-center justify-center sm:w-96 w-[80vw]"
+            className="lg:min-h-[32.5rem] h-[25rem] flex items-center justify-center sm:w-96 w-[80vw] "
             key={item.id}
           >
             <PinContainer
@@ -59,24 +95,30 @@ export default function CardPinComponents() {
             >
               <div className="relative flex items-center justify-center sm:w-96 w-[80vw] overflow-hidden h-[20vh] lg:h-[30vh] mb-10">
                 <div
-                  className="relative w-full h-full overflow-hidden lg:rounded-3xl"
-                  style={{ backgroundColor: "#13162D" }}
-                >
-                  <img src="/bg.png" alt="bgimg" />
+                  className="relative w-full h-full overflow-hidden lg:rounded-3xl bg-white"
+                  // style={{ backgroundColor: "#1F1F1F" }}
+                ></div>
+                <div className="flex flex-1 rounded-lg w-full">
+                  <Compare
+                    firstImage={item.firstImage}
+                    secondImage={item.secondImage}
+                    className="h-[250px]"
+                    slideMode="hover"
+                    autoplay={true}
+                  />
                 </div>
-                <img
-                  src={item.img}
-                  alt="cover"
-                  className="z-10 absolute bottom-0"
-                />
               </div>
 
-              <h1 className="font-bold lg:text-2xl md:text-xl text-base line-clamp-1">
+              <h1 className="font-bold text-md text-base line-clamp-1 text-white">
                 {item.title}
               </h1>
+              <div className="flex w-full max-w-full justify-between text-xs">
+                <p className="text-white">{item.position}</p>
+                <p className="text-white">{item.years}</p>
+              </div>
 
               <p
-                className="lg:text-xl lg:font-normal font-light text-sm line-clamp-2"
+                className="lg:text-lg font-light text-sm line-clamp-2"
                 style={{
                   color: "#BEC1DD",
                   margin: "1vh 0",
@@ -90,7 +132,7 @@ export default function CardPinComponents() {
                   {item.iconLists.map((icon, index) => (
                     <div
                       key={index}
-                      className="border border-white/[.2] rounded-full bg-black lg:w-10 lg:h-10 w-8 h-8 flex justify-center items-center"
+                      className="border border-white/[.2] rounded-full bg-black shadow-lg lg:w-10 lg:h-10 w-8 h-8 flex justify-center items-center"
                       style={{
                         transform: `translateX(-${5 * index + 2}px)`,
                       }}
@@ -101,7 +143,7 @@ export default function CardPinComponents() {
                 </div>
 
                 <div className="flex justify-center items-center">
-                  <p className="flex lg:text-xl md:text-xs text-sm text-purple">
+                  <p className="flex text-xs text-purple-500">
                     Check Live Site
                   </p>
                   <FaLocationArrow className="ms-3" color="#CBACF9" />

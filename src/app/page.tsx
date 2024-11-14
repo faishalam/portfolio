@@ -6,6 +6,7 @@ import { SparklesCore } from "@/components/Sparkles";
 import { SparklesPreview } from "@/components/SparklesPreview";
 import CardPinComponents from "@/components/Templates/CardPinComponents";
 import { CompareComponents } from "@/components/Templates/CompareComponents";
+import { DotBackgroundDemo } from "@/components/Templates/DotBackgroundDemo";
 import { GlobeDemo } from "@/components/Templates/GlobeComponents";
 import { InfiniteMovingCardsComponents } from "@/components/Templates/InfiniteMovingCardsComponents";
 // import { CardPinComponents } from "@/components/Templates/CardPinComponents";
@@ -26,6 +27,9 @@ export default function Home() {
   ];
 
   return (
+    // <>
+    //   <MovingCardsComponents/>
+    // </>
     <>
       <div className="max-w-full w-full sm:h-full">
         <WavyBackground className="max-w-7xl mx-auto">
@@ -48,11 +52,15 @@ export default function Home() {
         </div>
       </div>
 
+      <div className="max-w-full w-full sm:h-full">
+        <TimelineDemo />
+      </div>
+
       <div className="max-w-7xl w-full mx-auto flex flex-col justify-center items-center">
         <LampComponents />
+        {/* <MovingCardsComponents /> */}
       </div>
-      
-{/* 
+
       <div className="max-w-7xl w-full sm:h-full flex justify-center items-center mx-auto">
         <CardPinComponents />
       </div>
@@ -60,12 +68,8 @@ export default function Home() {
       <div className="max-w-7xl w-full sm:h-full justify-center items-center mx-auto">
         <StickyScrollComponents />
       </div>
-      <InfiniteMovingCardsComponents /> */}
 
-      {/* 
-      <div className="max-w-full w-full sm:h-full">
-      <TimelineDemo />
-      </div> */}
+      <DotBackgroundDemo />
     </>
   );
 }
